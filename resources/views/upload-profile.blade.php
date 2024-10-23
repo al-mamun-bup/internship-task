@@ -6,12 +6,7 @@
     <title>Upload Profile Picture</title>
 </head>
 <body>
-    <h1>Upload Profile Picture</h1>
-
-    @if(session('success'))
-        <p style="color:green;">{{ session('success') }}</p>
-    @endif
-
+    <h1>Upload Your Profile Picture</h1>
     <form action="{{ route('upload-profile.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="profile_picture" required>
@@ -19,4 +14,3 @@
     </form>
 </body>
 </html>
-

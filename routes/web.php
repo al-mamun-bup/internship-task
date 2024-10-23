@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/upload-profile', [ProfileController::class, 'index'])->name('upload-profile');
+Route::post('/upload-profile', [ProfileController::class, 'upload'])->name('upload-profile.store');
+
+
+Route::get('/upload-profile', [ProfileController::class, 'index'])->name('upload-profile');
+Route::post('/upload-profile', [ProfileController::class, 'upload'])->name('upload-profile.store');
+
 Route::post('/create-product', 'ProductController@createProduct');
 
 Route::post('/upload-profile-picture', 'ProfileController@uploadProfilePicture');
