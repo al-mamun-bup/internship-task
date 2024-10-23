@@ -41,6 +41,12 @@
             </ul>
         </nav>
     </div>
+    <form id="productForm" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Product Name" required>
+    <input type="file" name="image" required>
+    <input type="text" name="features[]" placeholder="Feature" required>
+    <button type="submit">Create Product</button>
+</form>
 
     <script>
         $("#imgSrc").attr('src', "https://ui-avatars.com/api/?background=random&color=fff&name={{ auth()->user()->name }}")

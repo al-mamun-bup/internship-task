@@ -57,4 +57,15 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+    public function uploadProfilePicture(Request $request) {
+        $request->validate(['profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048']);
+    
+        if ($request->file('profile_picture')) {
+            $path = $request->file('profile_picture')->store('profile_pictures', 'public');
+            // Save the path to the user's profile in the database
+        }
+    
+        return response()->json(['success' => 'Profile picture uploaded successfully.']);
+    }
+    
 }

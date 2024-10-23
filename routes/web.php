@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::post('/create-product', 'ProductController@createProduct');
+
+Route::post('/upload-profile-picture', 'ProfileController@uploadProfilePicture');
 
 Route::get('/', function () {
     return view('welcome');
